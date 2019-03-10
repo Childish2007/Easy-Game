@@ -1,0 +1,35 @@
+//beta 1.0.0.5
+#include <iostream>
+#include <stdio.h>
+#include <time.h>
+#include <windows.h>
+using namespace std;
+int main()
+{  
+	MessageBox(NULL,TEXT("这只是测试版本！"),TEXT("猜谜器 1.0.0.5"),0);
+	MessageBox(NULL,TEXT("目前只支持猜数字！"),TEXT("猜谜器 1.0.0.5"),0);
+	MessageBox(NULL,TEXT("更新：优化页面。"),TEXT("猜谜器 1.0.0.5"),0);
+	int n,f=0,ans,yesorno;
+	do
+	{
+		srand(time(0));
+		ans=rand()%10000+1;
+		cout<<"我已准备好1-10000的数，来输入吧！"<<endl;;
+		cin>>n;
+		while(n!=ans)
+		{
+			if(n>ans)cout<<"猜大了！"<<endl;
+			else if(n<ans)cout<<"猜小了！"<<endl;
+			cout<<"再输一次："<<endl;
+			cin>>n;
+		}
+		cout<<"猜对了！加1分！"<<endl;
+		f++;
+		cout<<"得分为："<<f<<endl;
+		cout<<"是否再来？(是就输0/否就输1）"<<endl;
+ 		cin>>yesorno;
+	}
+	while(yesorno==0);
+	system("pause");
+	return 0;
+}
